@@ -16,3 +16,9 @@ spec:
         image: matheuscruzdev/fmtok8sjvault
         ports:
         - containerPort: 8080
+        env:
+          - name: VAULT_SECRET
+            valueFrom:
+                secretKeyRef:
+                  name: fmtok8sjvault-secret
+                  key: vaultSecret
